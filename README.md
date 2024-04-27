@@ -64,7 +64,7 @@ To package the application with Gradio using PyInstaller, follow these steps:
 First, generate a spec file using `pyi-makespec` with the necessary options to collect Gradio data:
 
 ```bash
-pyi-makespec --collect-data=gradio_client --collect-data=gradio name.py
+pyi-makespec --collect-data=gradio_client --collect-data=gradio gradio_xtts_mantella_request.py
 ```
 
 ### Modify the Analysis in the Spec File
@@ -85,7 +85,7 @@ a = Analysis(
 Finally, generate the executable by running:
 
 ```bash
-pyinstaller name.spec
+pyinstaller gradio_xtts_mantella_request.spec
 ```
 
 ## Contributing
