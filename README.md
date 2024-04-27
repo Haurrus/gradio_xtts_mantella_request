@@ -55,6 +55,39 @@ To use the interactive Gradio interface:
 - `--speaker_wav`: Identifier for the speaker WAV file.
 - Additional TTS settings like `--temperature`, `--speed`, and more.
 
+## Packaging with PyInstaller
+
+To package the application with Gradio using PyInstaller, follow these steps:
+
+### Generate a Spec File
+
+First, generate a spec file using `pyi-makespec` with the necessary options to collect Gradio data:
+
+```bash
+pyi-makespec --collect-data=gradio_client --collect-data=gradio name.py
+```
+
+### Modify the Analysis in the Spec File
+
+Next, modify the Analysis section in the generated spec file to completely bypass the PYZ for Gradio. Update the file with the following:
+
+```python
+a = Analysis(
+    ...
+    module_collection_mode={
+        'gradio': 'py',  # Collect gradio package as source .py files
+    },
+)
+```
+
+### Generate the Executable
+
+Finally, generate the executable by running:
+
+```bash
+pyinstaller name.spec
+```
+
 ## Contributing
 
 Contributions to the project are welcome. Please fork the repository and submit a pull request.
