@@ -31,7 +31,7 @@ pip install gradio requests
 You can run the script from the command line with the following arguments:
 
 ```bash
-python tts_script.py --ip <server-ip> --port <server-port> --text "Your text here" --language en --file_path <path-to-save-output> --speaker_wav <speaker-file-identifier>
+python gradio_xtts_mantella_request.py --ip <server-ip> --port <server-port> --text "Your text here" --language en --file_path <path-to-save-output> --speaker_wav <speaker-file-identifier>
 ```
 
 ### Using Gradio Interface
@@ -40,7 +40,7 @@ To use the interactive Gradio interface:
 
 1. Run the script without any arguments:
    ```bash
-   python tts_script.py
+   python gradio_xtts_mantella_request.py
    ```
 2. Open the displayed URL in a web browser to access the GUI.
 
